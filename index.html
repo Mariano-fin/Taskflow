@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskflow Gestor de tareas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <header class="container">
+        <h1>Taskflow</h1>
+        <p>Su gestor de tareas</p>
+    </header>
+
+    <main class="container">
+        <div>
+            <h2>Lista de tareas</h2>
+            <p>Completa y elimina tareas</p>
+        </div>
+        <div>
+            <ul>
+                <div>
+                    <li>Tarea 1</li>
+                    <button>Editar</button>
+                    <button>Completar</button>
+                    <button>Editar</button>
+                </div>
+                <div>
+                    <li>Tarea 2</li>
+                    <button>Editar</button>
+                    <button>Completar</button>
+                    <button>Editar</button>
+                </div>
+                <div>
+                    <li>Tarea 3</li>
+                    <button>Editar</button>
+                    <button>Completar</button>
+                    <button>Editar</button>
+                </div>
+            </ul>
+        </div>
+        <div>
+            <h3>Agregar nueva tarea</h2>
+        </div>
+        <div>
+            <form method="post">
+            <label for="nuevaTarea">Nombre: </label>
+            <input type="text" name="nuevaTarea" placeholder="Ej: Organizar archivos en PC">
+            <label for="descripcion">Descripción: </label>
+            <input type="text" name="descripcion" placeholder="Ej: Crear carpetas y respaldos en la nube">
+            <label for="fechaLimite">Fecha límite: </label>
+            <input type="date" name="fechaLimite">
+            <button type="submit">Agregar</button>
+            </form>
+        </div>
+
+        
+    </main>
+    <footer class="container">
+        <div>
+            <p>Mariano F. Inostroza, 2026</p>
+        </div>
+    </footer>
+
+
+    <script src="/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
+

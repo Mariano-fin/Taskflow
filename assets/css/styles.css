@@ -1,0 +1,7 @@
+.boton-central {
+    background-color: rgb(1, 151, 26);
+}
+
+.chicken {
+   background-color: var(--bs-primary-border-subtle)
+}

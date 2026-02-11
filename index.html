@@ -1,96 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taskflow Gestor de tareas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body style="background-color: rgb(184, 177, 177); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-    <header class="container text-center">
-        <h1>Taskflow</h1>
-        <p class="text-body-secondary">Su gestor de tareas</p>
-    </header>
 
+<body class="container-fluid px-0 px-sm-3" style="background-image: url(./assets/img/48-nice-green-gradient.jpg); background-size: cover; background-attachment: fixed; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; min-height: 100vh;">
 
-   
-    <main style="" class="container">
-    <div class="container">
-        <div>
-            <h2>Lista de tareas</h2>
-            <p>Completa y elimina tareas</p>
-        </div>
-        <div class="container">        
-            <ul class="list-group">
-                <div  class="list-group-item list-group-item-info" >
-                    <li>Tarea 1</li>
-                    <button>Editar</button>
-                    <button>Completar</button>
-                    <button>Editar</button>
+    <div class="container granDiv bg-dark bg-gradient bg-opacity-50">
+
+        <header class="container text-center">
+            <h1>TASKFLOW</h1>
+            <p class="text-body-secondary fst-italic">Su gestor de tareas personal</p>
+        </header>
+
+        <main class="container">
+
+            <div class="container seccion-lista">
+                <div>
+                    <h2>Lista de tareas</h2>
+                    <p>Completa y elimina tareas</p>
                 </div>
-                <div class="list-group-item list-group-item-info">
-                    <li>Tarea 2</li>
-                    <button>Editar</button>
-                    <button>Completar</button>
-                    <button>Editar</button>
+
+                <div class="container px-0">
+                    <ul class="list-group mb-0 px-0" style="list-style: none;">
+                        <div id="tareaEnLista" class="list-group-item tarea-item">
+                            <span class="tarea-nombre">Tarea 1</span>
+                            <div class="tarea-acciones">
+                                <button class="btn-tarea btn-editar">Editar</button>
+                                <button class="btn-tarea btn-completar">Completar</button>
+                                <button class="btn-tarea btn-eliminar">Eliminar</button>
+                            </div>
+                        </div>
+                        <div id="tareaEnLista" class="list-group-item tarea-item">
+                            <span class="tarea-nombre">Tarea 2</span>
+                            <div class="tarea-acciones">
+                                <button class="btn-tarea btn-editar">Editar</button>
+                                <button class="btn-tarea btn-completar">Completar</button>
+                                <button class="btn-tarea btn-eliminar">Eliminar</button>
+                            </div>
+                        </div>
+                        <div id="tareaEnLista" class="list-group-item tarea-item">
+                            <span class="tarea-nombre">Tarea 3</span>
+                            <div class="tarea-acciones">
+                                <button class="btn-tarea btn-editar">Editar</button>
+                                <button class="btn-tarea btn-completar">Completar</button>
+                                <button class="btn-tarea btn-eliminar">Eliminar</button>
+                            </div>
+                        </div>
+                    </ul>
                 </div>
-                <div class="list-group-item list-group-item-info">
-                    <li>Tarea 3</li>
-                    <button>Editar</button>
-                    <button>Completar</button>
-                    <button>Editar</button>
+            </div>
+
+            <div class="container text-center contenedor-agregar">
+                <a class="btn btn-success menuNuevaTarea" data-bs-toggle="collapse" href="#collapseExample"
+                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                    + Agregar nueva tarea
+                </a>
+            </div>
+
+            <div class="collapse container" id="collapseExample">
+                <form method="post" class="formulario-tarea">
+                    <div class="form-grupo">
+                        <label for="nuevaTarea">Nombre</label>
+                        <input type="text" name="nuevaTarea" id="nuevaTarea"
+                            placeholder="Ej: Organizar archivos en PC">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" name="descripcion" id="descripcion"
+                            placeholder="Ej: Crear carpetas y respaldos en la nube">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="fechaLimite">Fecha límite</label>
+                        <input type="date" name="fechaLimite" id="fechaLimite">
+                    </div>
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Agregar
+                    </button>
+                </form>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title fs-5" id="exampleModalLabel">Nueva tarea</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¡Tarea agregada exitosamente!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
                 </div>
-            </ul>
-        </div>
+            </div>
+
+        </main>
+
     </div>
-        <div class="container">
-            <h3>Agregar nueva tarea</h2>
-        </div>
-        <div class="container">
-            <form method="post">
-            <label for="nuevaTarea">Nombre: </label>
-            <input type="text" name="nuevaTarea" placeholder="Ej: Organizar archivos en PC">
-            <label for="descripcion">Descripción: </label>
-            <input type="text" name="descripcion" placeholder="Ej: Crear carpetas y respaldos en la nube">
-            <label for="fechaLimite">Fecha límite: </label>
-            <input type="date" name="fechaLimite">
-                        
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Agregar
-            </button>
 
-            
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-5" id="exampleModalLabel">Nueva tarea</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¡Tarea agregada exitosamente!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
-                </div>
-                </div>
-            </div>
-            </div>
-            </form>
-        </div>
-
-        
-    </main>
     <footer class="container">
-        <div class="container text-center chicken">
+        <div class="container text-center pie">
             <p>Mariano F. Inostroza, 2026</p>
         </div>
     </footer>
 
-
     <script src="/assets/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
+</body>
+
+</html>

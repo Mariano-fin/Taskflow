@@ -1,3 +1,5 @@
+let listaTareas []
+
 class Tarea {
     constructor(id, descripcion, estado, fechaCreacion) {
     this.id = id;
@@ -10,5 +12,7 @@ class Tarea {
 class GestorTareas {
 
 }
+
+
 
 

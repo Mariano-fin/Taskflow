@@ -1,7 +1,256 @@
+
 .boton-central {
     background-color: rgb(1, 151, 26);
 }
 
-.chicken {
-   background-color: var(--bs-primary-border-subtle)
+.pie {
+    background-color: rgba(102, 145, 153, 0.493);
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+#collapseExample {
+    background-color: transparent;
+}
+
+#tareaEnLista {
+    background-color: rgba(202, 231, 203, 0.705);
+    border-color: rgb(121, 167, 151);
+}
+
+.granDiv {
+    border-radius: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.menuNuevaTarea {
+    padding: 0.5rem 1.75rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-shadow: 5px 5px 10px rgba(253, 200, 121, 0.295);
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 0.25rem;
+}
+
+header {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 2rem;
+}
+
+header p {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* =================LISTA ========== */
+
+.seccion-lista h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.seccion-lista p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.tarea-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.tarea-nombre {
+    font-size: 0.95rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.tarea-acciones {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.btn-tarea {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-editar    { background-color: rgba(100, 100, 100, 0.15); color: #1a1a1a; }
+.btn-completar { background-color: rgba(25, 135, 84, 0.75);   color: #ffffff; }
+.btn-eliminar  { background-color: rgba(220, 53, 69, 0.65);   color: #ffffff; }
+
+.btn-editar:hover    { background-color: rgba(100, 100, 100, 0.3); }
+.btn-completar:hover { background-color: rgba(25, 135, 84, 0.95); }
+.btn-eliminar:hover  { background-color: rgba(220, 53, 69, 0.9); }
+
+.contenedor-agregar {
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+/* ==========================FOMR======= */
+
+.formulario-tarea {
+    background-color: rgb(209, 212, 235);
+    border: 1px solid rgba(121, 167, 151, 0.5);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.formulario-tarea label {
+    color: #3a3a3a;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.formulario-tarea input {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(121, 167, 151, 0.6);
+    border-radius: 6px;
+    padding: 0.45rem 0.75rem;
+    color: #1a1a1a;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.formulario-tarea input::placeholder {
+    color: rgba(0, 0, 0, 0.35);
+}
+
+.formulario-tarea input:focus {
+    outline: none;
+    border-color: rgb(1, 151, 26);
+    background-color: #ffffff;
+}
+
+/* =============================================
+   AJUSTES DE RESPONSIVIDAD (Agregados por Claude.ai)
+   ============================================= */
+
+@media (max-width: 576px) {
+
+    /* Body sin padding lateral en móvil */
+    body.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* granDiv ocupa todo el ancho con menos padding */
+    .granDiv {
+        border-radius: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 1rem;
+    }
+
+    /* Header más compacto */
+    header {
+        padding: 1.25rem 0 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+        letter-spacing: 3px;
+    }
+
+    header p {
+        font-size: 0.82rem;
+    }
+
+    /* Tarjetas: nombre arriba, botones abajo */
+    .tarea-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 0.75rem;
+    }
+
+    .tarea-acciones {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .btn-tarea {
+        flex: 1;
+        text-align: center;
+        padding: 0.35rem 0.4rem;
+        font-size: 0.75rem;
+    }
+
+    /* Formulario: inputs a ancho completo */
+    .formulario-tarea {
+        padding: 1rem;
+    }
+
+    .formulario-tarea input {
+        width: 100%;
+    }
+
+    /* Botón agregar a ancho completo */
+    .menuNuevaTarea {
+        width: 100%;
+    }
+
+    /* Footer más compacto */
+    footer {
+        padding: 0.75rem 0;
+    }
+}
+
+
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+    .granDiv {
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        letter-spacing: 4px;
+    }
+
+    /* Tarjetas: mantienen fila pero botones se achican */
+    .btn-tarea {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Formulario: inputs a ancho completo */
+    .formulario-tarea input {
+        width: 100%;
+    }
 }

@@ -1,8 +1,8 @@
 let listaTareas = []
 
-const nombreTarea = document.getElementById(nombreTarea)
-const descripcion = document.getElementById(descripcion)
-const fechaLimite = document.getElementById(fechaLimite)
+const nombreTarea = document.getElementById("nombre-nueva-tarea");
+const descripcionTarea = document.getElementById("descripcionTareaHTML");
+const fechaLimiteTarea = document.getElementById("fechaLimiteTareaHTML");
 
 class Tarea {
     constructor(id, descripcion, estado, fechaCreacion, fechaLimite) {
@@ -29,3 +29,21 @@ function normalizarTexto(texto){
         .replace(/\s+/g , " ")
 }
 
+
+
+function new Tarea 
+
+function agregarTarea {
+    listaTareas.push ({
+        nombre: nombreTarea,
+        descripcion: descripcionTarea,
+        fecha: fechaLimiteTarea
+        
+    }
+
+    )
+}
+
+async function cargarRutina() {
+    const rutina = await obtenerRutina 
+}

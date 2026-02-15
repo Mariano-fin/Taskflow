@@ -1,5 +1,6 @@
 let listaTareas = []
 
+let contadorID = 0;
 
 const botonAgregar = document.getElementById("agregar-tarea");
 const nombreTarea = document.getElementById("nombre-nueva-tarea");
@@ -30,10 +31,11 @@ botonAgregar.addEventListener('click', agregarTarea => {
     
 
     listaTareas.push ({
+        id: contadorID++,
         nombre: nombreTarea.value,
         descripcion: descripcionTarea.value,
         fecha: fechaLimiteTarea.value,
-        estado: "Pendiente"      
+        estado: "pendiente"      
     })
     
     nombreTarea.value = "";

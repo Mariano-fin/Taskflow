@@ -130,6 +130,8 @@ function renderizarLista(listaTareas) {
 
 }
 
+// ===========Creador de tareas
+
 function crearTareaHTML(tarea) {
     const divTarea = document.createElement("div");
     divTarea.className = "list-group-item tarea-item";

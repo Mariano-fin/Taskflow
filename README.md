@@ -14,12 +14,11 @@
 - Simulación de carga de API con async/await
 - Botones de manejo de tareas funcionales
 - Modal de edición de tarea
-
+- Uso de "fakeApi" para cargar tareas demo
 
 ## Características por implementar
 
 - Uso de localStorage para guardar información
-- Uso de "fakeApi" para cargar tareas demo
 
 
 ## Métodos y herramientas utilizadas

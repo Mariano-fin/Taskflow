@@ -2,27 +2,24 @@ let listaTareas = []
 
 let contadorID = 0;
 
+renderizarLista(listaTareas);
+
 const botonAgregar = document.getElementById("agregar-tarea");
 const nombreTarea = document.getElementById("nombre-nueva-tarea");
 const descripcionTarea = document.getElementById("descripcionTareaHTML");
 const fechaLimiteTarea = document.getElementById("fechaLimiteTareaHTML");
+const listaPantalla = document.getElementById("listado-tareas-HTML");
 
-/* 
-function normalizarTexto(texto){
-    return String(texto)
-        .trim()
-        .replace(/\s+/g , " ")
-}
 
-class Tarea {
-    constructor(id, descripcion, estado, fechaCreacion, fechaLimite) {
-    this.id = id;
-    this.descripcion = descripcion;
-    this.estado = estado;
-    this.fechaCreacion = fechaCreacion;
-    this.fechaLimite = fechaLimite;
-    }
-} */
+// =======================Variables para modal de Editar Tarea=======
+
+const editarNombre = document.getElementById("editar-nombre");
+const editarDescripcion = document.getElementById("editar-descripcion");
+const editarFecha = document.getElementById("editar-fecha");
+const botonGuardarEdicion = document.getElementById("guardar-edicion");
+
+let tareaEditandoId = null;
+
 
 /*================== Actualiza array a partir de form ==============*/
 
@@ -47,6 +44,34 @@ botonAgregar.addEventListener('click', agregarTarea => {
     renderizarLista(listaTareas); 
 
     console.log("Tarea agregada ---->", listaTareas);
+});
+
+botonGuardarEdicion.addEventListener('click', () => {
+    
+    if (tareaEditandoId === null) return;
+    
+    listaTareas = listaTareas.filter(t => t.id !== tareaEditandoId);
+    
+    listaTareas.push({
+        id: contadorID++,
+        nombre: editarNombre.value,
+        descripcion: editarDescripcion.value,
+        fecha: editarFecha.value,
+        estado: "pendiente"
+    });
+    
+    editarNombre.value = "";
+    editarDescripcion.value = "";
+    editarFecha.value = "";
+    
+    tareaEditandoId = null;
+
+    const editarModal = bootstrap.Modal.getInstance(document.getElementById('editarModal'));
+    editarModal.hide();
+
+    renderizarLista(listaTareas);
+    
+    console.log("Tarea editada ---->", listaTareas);
 });
 
 
@@ -164,18 +189,62 @@ function crearTareaHTML(tarea) {
     div_botones.appendChild(boton_editar);
     div_botones.appendChild(boton_eliminar);
 
+    boton_completar.addEventListener('click', () => {
+        toggleCompletar(tarea.id);
+    });
+
+    boton_editar.addEventListener('click', () => {
+        editarTarea(tarea.id);
+    });
+
+    boton_eliminar.addEventListener('click', () => {
+        eliminarTarea(tarea.id);
+    });
+
     return divTarea
 }
 
+// =========Funciones de botones
 
 
-/* 
-function toggleCompletar() {
-    const tarea = listaTareas.find()
+function toggleCompletar(id) {
+    const tarea = listaTareas.find(t => t.id === id);
+    if (!tarea) return;
+    tarea.estado = tarea.estado === "completada" ? "pendiente" : "completada";
+    renderizarLista(listaTareas);
 }
+
+function editarTarea(id) {
+    const tarea = listaTareas.find(t => t.id === id);
+    if (!tarea) return;
+   
+    tareaEditandoId = id;
+    
+    editarNombre.value = tarea.nombre;       
+    editarDescripcion.value = tarea.descripcion;  
+    editarFecha.value = tarea.fecha;        
+    
+    const editarModal = new bootstrap.Modal(document.getElementById("editarModal"));
+    editarModal.show();
+}
+
+function eliminarTarea(id, divPadre) {
+    
+    listaTareas = listaTareas.filter(t => t.id !== id);
+    
+    if (divPadre?.remove) divPadre.remove() 
+     
+    renderizarLista(listaTareas);
+    
+}
+
+
+
+
 
 
 
 async function cargarRutina() {
     const rutina = await obtenerRutina 
-} */
+} 
+

@@ -29,51 +29,6 @@
 
                 <div class="container px-0">
                     <ul class="list-group mb-0 px-0" style="list-style: none;" id="listado-tareas-HTML">
-                        <div id="tareaEnLista" class="list-group-item tarea-item">
-                            <div class="tarea-contenido">
-                                <div class="d-flex align-items-center gap-2 mb-1">
-                                    <span class="tarea-nombre">Tarea 1</span>
-                                    <span class="badge bg-warning text-dark">Pendiente</span>
-                                </div>
-                                <p class="tarea-descripcion">Descripción de ejemplo para la primera tarea</p>
-                                <span class="tarea-fecha">📅 Fecha límite: 2026-03-15</span>
-                            </div>
-                            <div class="tarea-acciones">
-                                <button class="btn-tarea btn-editar">Editar</button>
-                                <button class="btn-tarea btn-completar">Completar</button>
-                                <button class="btn-tarea btn-eliminar">Eliminar</button>
-                            </div>
-                        </div>
-                        <div id="tareaEnLista" class="list-group-item tarea-item">
-                            <div class="tarea-contenido">
-                                <div class="d-flex align-items-center gap-2 mb-1">
-                                    <span class="tarea-nombre">Tarea 2</span>
-                                    <span class="badge bg-warning text-dark">Pendiente</span>
-                                </div>
-                                <p class="tarea-descripcion">Descripción de ejemplo para la segunda tarea</p>
-                                <span class="tarea-fecha">📅 Fecha límite: 2026-03-20</span>
-                            </div>
-                            <div class="tarea-acciones">
-                                <button class="btn-tarea btn-editar">Editar</button>
-                                <button class="btn-tarea btn-completar">Completar</button>
-                                <button class="btn-tarea btn-eliminar">Eliminar</button>
-                            </div>
-                        </div>
-                        <div id="tareaEnLista" class="list-group-item tarea-item">
-                            <div class="tarea-contenido">
-                                <div class="d-flex align-items-center gap-2 mb-1">
-                                    <span class="tarea-nombre">Tarea 3</span>
-                                    <span class="badge bg-warning text-dark">Pendiente</span>
-                                </div>
-                                <p class="tarea-descripcion">Descripción de ejemplo para la tercera tarea</p>
-                                <span class="tarea-fecha">📅 Fecha límite: 2026-03-25</span>
-                            </div>
-                            <div class="tarea-acciones">
-                                <button class="btn-tarea btn-editar">Editar</button>
-                                <button class="btn-tarea btn-completar">Completar</button>
-                                <button class="btn-tarea btn-eliminar">Eliminar</button>
-                            </div>
-                        </div>
                     </ul>
                 </div>
             </div>
@@ -153,6 +108,39 @@
                     </div>
                 </div>
             </div>
+
+<!----MODAL DE EDITAR TAREA----------------------->            
+
+        <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="editarModalLabel">Editar tarea</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formulario-editar">
+                            <div class="mb-3">
+                                <label for="editar-nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editar-nombre" placeholder="Ej: Organizar archivos en PC">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editar-descripcion" class="form-label">Descripción</label>
+                                <input type="text" class="form-control" id="editar-descripcion" placeholder="Ej: Crear carpetas y respaldos en la nube">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editar-fecha" class="form-label">Fecha límite</label>
+                                <input type="date" class="form-control" id="editar-fecha">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success" id="guardar-edicion">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         </main>
 

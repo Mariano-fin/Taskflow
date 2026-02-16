@@ -1,15 +1,15 @@
+import {cargarRutina} from "./fakeapi.js"
+
 let listaTareas = []
 
 let contadorID = 0;
 
-renderizarLista(listaTareas);
 
 const botonAgregar = document.getElementById("agregar-tarea");
 const nombreTarea = document.getElementById("nombre-nueva-tarea");
 const descripcionTarea = document.getElementById("descripcionTareaHTML");
 const fechaLimiteTarea = document.getElementById("fechaLimiteTareaHTML");
-const listaPantalla = document.getElementById("listado-tareas-HTML");
-
+const botonRutina = document.getElementById("boton-rutina");
 
 // =======================Variables para modal de Editar Tarea=======
 
@@ -238,13 +238,26 @@ function eliminarTarea(id, divPadre) {
     
 }
 
+// ================Función de rutina (tareas de prueba)
 
+async function cargarRutinaAsync() {
+    try {
+    listaTareas = await cargarRutina()
+    renderizarLista(listaTareas);
+    const maxId = Math.max(...listaTareas.map(t => t.id), contadorID - 1);
+    contadorID = maxId + 1;
+    } 
+    catch (error) {
+        console.error("ERROR: ", error)
+    }
+}
 
+function iniciar() {
+    renderizarLista(listaTareas);
+    console.log("Taskflow iniciado correctamente")
+    
+    botonRutina.addEventListener("click", cargarRutinaAsync)
 
+}
 
-
-
-async function cargarRutina() {
-    const rutina = await obtenerRutina 
-} 
-
+iniciar();

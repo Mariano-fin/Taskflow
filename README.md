@@ -12,11 +12,12 @@
 - Interfaz intuitiva
 - Uso de modales para mensajes al usuario
 - Simulación de carga de API con async/await
+- Botones de manejo de tareas funcionales
+- Modal de edición de tarea
 
 
 ## Características por implementar
 
-- Funcionalidad en botones
 - Uso de localStorage para guardar información
 - Uso de "fakeApi" para cargar tareas demo
 
